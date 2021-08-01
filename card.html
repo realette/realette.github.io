@@ -37,6 +37,7 @@
     </style>
 </head>
 
+
 <body>
     <script src="js.js"></script>
     <p>
@@ -48,7 +49,27 @@
     <button class="button" onclick="clicked()"><h1><strong>click me</strong></h1></button>
 </body>
 <script>
-    alert("hi")
+    var username = prompt('Tell me your name')
+    var password = prompt('password')
+
+    if (password != '돌기') {
+        var i = 0
+        while (i <= 1) {
+            var i = 1
+            var password = prompt('password')
+            if (password != '돌기') {
+                i = i - 1;
+            } else if (password == '돌기') {
+                i = i + 1 / 0;
+            }
+        }
+    }
+
+    if (username == '영욱') {
+        alert('Welcome back');
+    } else if (username != '영욱') {
+        alert('New face!')
+    }
 </script>
 
 </html>
