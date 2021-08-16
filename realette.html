@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <img id="squirrel" src="squirrel.jpg" alt="a squirrel" style="width: 480px;">
+    <script>
+        window.onload = function() {
+
+            var sq = {};
+            sq.e = document.getElementById("squirrel");
+            if (sq.e.naturalWidth) {
+                sq.nw = sq.e.naturalWidth;
+            } else {
+                var i = new Image();
+                i.src = sq.e.src;
+                sq.nw = i.width;
+            }
+            sq.zoom = 30;
+
+            if (sq.e.addEventListener) {
+                sq.e.addEventListener("mousewheel", MouseWheelHandler, false);
+                sq.e.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+            } else sq.e.attachEvent("onmousewheel", MouseWheelHandler);
+
+            function MouseWheelHandler(e) {
+
+                // cross-browser wheel delta
+                var e = window.event || e;
+                var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+                sq.e.style.width = Math.max(sq.zoom, Math.min(sq.nw, sq.e.width + (sq.zoom * delta))) + "px";
+
+                return false;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
