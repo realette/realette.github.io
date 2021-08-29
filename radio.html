@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <style>
+        input[type="radio"] {
+            height: 99%;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <input id='radio' type='radio'>
+    </center>
+
+    <audio id='player' loop>
+        <source src='https://realette.github.io/nosie.mp3'>
+    </audio>
+    <audio id='onair'>
+        <source src='https://realette.github.io/onair.mp3'>
+    </audio>
+    <script>
+        function timecheck() {
+            var play = document.getElementById("player")
+            var button = document.getElementById("radio")
+            var onair = document.getElementById("onair")
+
+            today = new Date();
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+
+            radio.onclick = function() {
+                play.play();
+            }
+            if (hour == 00 && minute == 0 && second == 0) {
+                play.pause();
+                onair.play();
+                setTimeout(function() {
+                    play.play();
+                }, 60000);
+            }
+            setTimeout(timecheck, 1000);
+        }
+        timecheck();
+    </script>
+</body>
+
+</html>
