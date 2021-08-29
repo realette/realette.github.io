@@ -1,36 +1,82 @@
 <html>
 
+<head>
+    <meta title="realette">
+    <meta name="description" content="confront the world">
+    <meta name="author" content="the Creator">
+
+    <style>
+        body {
+            background-color: black;
+        }
+        
+        button {
+            -webkit-apperance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+            color: transparent;
+            border-color: transparent;
+            size: 200%;
+            font-size: 200%;
+        }
+        
+        #realbtn {
+            text-align: left;
+            width: auto;
+            float: left;
+            left: 0;
+            position: fixed;
+            bottom: 0;
+        }
+        
+        #ettebtn {
+            text-align: right;
+            width: auto;
+            float: right;
+            right: 0;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+
 <body>
-    <img id="squirrel" src="squirrel.jpg" alt="a squirrel" style="width: 480px;">
+
+    <div id="allbtn">
+
+        <button id="realbtn">reality</button>
+
+        <button id="ettebtn">reality</button>
+
+    </div>
+
     <script>
-        window.onload = function() {
+        window.addEventListener('keydown', function(e) {
+            console.log(e.keyCode);
+            if (e.ctrlKey && e.keyCode == 77) {
+                var input = prompt();
+                if (input == 'help') {
+                    window.open("https://realette.github.io/help");
+                } else if (input == 'start') {
+                    window.open("https://realette.github.io/")
+                } else if (input == 'begin') {
+                    window.open("https://realette.github.io/")
+                } else if (input == 'radio') {
+                    window.open("https://realette.github.io/radio")
+                }
 
-            var sq = {};
-            sq.e = document.getElementById("squirrel");
-            if (sq.e.naturalWidth) {
-                sq.nw = sq.e.naturalWidth;
-            } else {
-                var i = new Image();
-                i.src = sq.e.src;
-                sq.nw = i.width;
             }
-            sq.zoom = 30;
+        });
 
-            if (sq.e.addEventListener) {
-                sq.e.addEventListener("mousewheel", MouseWheelHandler, false);
-                sq.e.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
-            } else sq.e.attachEvent("onmousewheel", MouseWheelHandler);
+        document.getElementById("realbtn").onclick = function() {
+            document.getElementById("realbtn").innerHTML = "realette";
+            window.open("https://realette.github.io/");
+        }
 
-            function MouseWheelHandler(e) {
-
-                // cross-browser wheel delta
-                var e = window.event || e;
-                var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-                sq.e.style.width = Math.max(sq.zoom, Math.min(sq.nw, sq.e.width + (sq.zoom * delta))) + "px";
-
-                return false;
-            }
-
+        document.getElementById("ettebtn").onclick = function() {
+            document.getElementById("ettebtn").innerHTML = "realette";
+            window.open("https://realette.github.io/");
         }
     </script>
 </body>
