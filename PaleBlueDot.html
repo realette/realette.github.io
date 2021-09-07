@@ -63,11 +63,11 @@
     </div>
 
     <script>
-        document.getElementById("video").onclick = function() {
+        document.getElementById("video").onchange = function() {
             document.getElementById("text").setAttribute("style", "opacity: 100%;");
         }
 
-        document.getElementById("realbtn").onchange = function() {
+        document.getElementById("realbtn").onclick = function() {
             document.getElementById("realbtn").innerHTML = "realette";
             self.location = "Andyetitmoves.html";
         }
