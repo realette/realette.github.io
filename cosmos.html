@@ -1,0 +1,72 @@
+<html>
+
+<head>
+
+    <style>
+        #text {
+            margin-top: 2.5%;
+            color: white;
+            text-align: center;
+            float: center;
+            position: relative;
+        }
+        
+        #video {
+            margin-top: 5%;
+            position: relative;
+        }
+        
+        body {
+            background-color: black;
+        }
+        
+        button {
+            -webkit-apperance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+            color: transparent;
+            border-color: transparent;
+            size: 200%;
+            font-size: 200%;
+        }
+        
+        #realbtn {
+            text-align: left;
+            width: auto;
+            float: left;
+            left: 0;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <img id="video" height="65%" src="https://realette.github.io/bybeingboundbyeacheveryone.jpg">
+    </center>
+
+
+    <center>
+        <div id='text'>
+            In a universe made out of energy, everything is entangled
+            <br>에너지로 만들어진 우주에서, 모든 것은 얽혀있다.
+        </div>
+    </center>
+
+    <div id="allbtn">
+
+        <button id="realbtn">reality</button>
+
+    </div>
+
+    <script>
+        document.getElementById("realbtn").onclick = function() {
+            document.getElementById("realbtn").innerHTML = "realette";
+            self.location = "https://realette.github.io/Lettherebelight.html";
+        }
+    </script>
+</body>
+
+</html>
