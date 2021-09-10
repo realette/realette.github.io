@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+    <style>
+        #text {
+            margin-top: 2.5%;
+            color: black;
+            text-align: center;
+            float: center;
+            position: relative;
+        }
+        
+        #video {
+            margin-top: 5%;
+            position: relative;
+        }
+        
+        body {
+            background-color: white;
+        }
+        
+        button {
+            -webkit-apperance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+            color: transparent;
+            border-color: transparent;
+            size: 200%;
+            font-size: 200%;
+        }
+        
+        #realbtn {
+            text-align: left;
+            width: auto;
+            float: left;
+            left: 0;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="allbtn">
+
+        <button id="realbtn">reality</button>
+
+    </div>
+
+    <script>
+        document.getElementById("realbtn").onclick = function() {
+            document.getElementById("realbtn").innerHTML = "realette";
+            self.location = "https://realette.github.io/isthisthereallifeisthisjustfantasy.html";
+        }
+    </script>
+</body>
+
+</html>
