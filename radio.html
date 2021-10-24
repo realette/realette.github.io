@@ -21,32 +21,216 @@
         <input id='radio' type='button'>
     </center>
 
-    <audio id='player' loop>
+    <audio id='nonair' loop>
         <source src='https://realette.github.io/nosie.mp3'>
     </audio>
     <audio id='onair'>
-        <source src='https://realette.github.io/onair.mp3'>
+        <source src='https://realette.github.io/onair.mp3' class="onair">
     </audio>
+    <!--audio 추가하기-->
+    <audio id='onair0930' class="onair">
+        <source src='https://realette.github.io/onair0930.mp3'>
+    </audio>
+    <audio id='onair12lastsatbeforexmas' class="onair">
+        <source src='https://realette.github.io/onair12lastsatbeforexmas.mp3'>
+    </audio>
+    <audio id='onairyesterday' class="onair">
+        <source src='https://realette.github.io/onairyesterday.mp3'>
+    </audio>
+    <audio id='onair0215' class="onair">
+        <source src='https://realette.github.io/onair0215.mp3'>
+    </audio>
+    <audio id='onair0625' class="onair">
+        <source src='https://realette.github.io/onair0625.mp3'>
+    </audio>
+    <audio id='onair0702' class="onair">
+        <source src='https://realette.github.io/onair0702.mp3'>
+    </audio>
+    <audio id='onair0531' class="onair">
+        <source src='https://realette.github.io/onair0531.mp3'>
+    </audio>
+    <audio id='onair1231' class="onair">
+        <source src='https://realette.github.io/onair1231.mp3'>
+    </audio>
+
+    <style>
+        /* The Modal (background) */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+        /* Modal Content/Box */
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            /* Could be more or less, depending on screen size */
+        }
+    </style>
+
+    <div id="modal1031" class="modal">
+        <div class="modal-content">
+            <div class="container">
+                <p>지하 세계의 문이 열리고 한 세계를 끝내게 된다면<br>또 다시 한 세계가 시작될 것이다.</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal0707" class="modal">
+        <div class="modal-content">
+            <div class="container">
+                <p>어떤 세계는 그렇게 갑자기 시작되기도 한다.</p>
+            </div>
+        </div>
+    </div>
+    <div id="modal1231" class="modal">
+        <div class="modal-content">
+            <div class="container">
+                <p>그럼에도 불구하고 세계는 끝나지 않는다.<br>누군가는 남을 것이고 무언가를 이을 것이다.<br>당신도 그 중 하나인가?</p>
+            </div>
+        </div>
+    </div>
+
+
+
     <script>
         function timecheck() {
-            var play = document.getElementById("player")
+            var nonair = document.getElementById("nonair")
             var button = document.getElementById("radio")
             var onair = document.getElementById("onair")
+                //var 추가하기
+            var onair0930 = document.getElementById("onair0930")
+            var onair12lastsatbeforexmas = document.getElementById("onair12lastsatbeforexmas")
+            var onairyesterday = document.getElementById("onairyesterday")
+            var onair0215 = document.getElementById("onair0215")
+            var onair0702 = document.getElementById("onair0702")
+            var onair0625 = document.getElementById("onair0625")
+            var onair0531 = document.getElementById("onair0531")
+            var onair1231 = document.getElementById("onair1231")
 
             today = new Date();
+            var month = today.getMonth() + 1;
+            //1=1월, 2=2월, 3=3월, 12=12월
+            var day = today.getDate();
+            var eoil = today.getDay();
+            //eoil=요일
+            //1=월, 2=화, 6=토, *0=일*
             var hour = today.getHours();
             var minute = today.getMinutes();
             var second = today.getSeconds();
 
+
             radio.onclick = function() {
-                play.play();
+                console.log(month);
+                console.log(day);
+                nonair.play();
             }
-            if (hour == 00 && minute == 0 && second == 0) {
-                play.pause();
-                onair.play();
-                setTimeout(function() {
-                    play.play();
-                }, 60000);
+            if (hour == 00 && minute == 0) {
+                //60000 = 1분임.
+                //
+                //원하는 날짜에서 하루를 더해야함(00시 방송이니까)
+                //
+                //날짜는 4자리로 표기(0304, 1203, 1012)
+                if (month == 12 && eoil == 0 && day < 25 && day > 17) {
+                    //12월 크리스마스 전의 토요일 - Piano man (Billy Joel) / 5'40" (340,000)
+                    nonair.pause();
+                    onair12lastsatbeforexmas.play();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 340000);
+                } else if (month == 6 && day == 26) {
+                    // 6월 25일 - 21 guns (Green day) / 5'22" (322,000)
+                    nonair.pause();
+                    onair0625.play();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 322000);
+                } else if (month == 6 && day == 1) {
+                    // 5월 31일 - Hotel California (Eagles) / 6'31" (391,000)
+                    nonair.pause();
+                    onair0531.play();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 391000);
+                } else if (month == 7 && day == 3) {
+                    //366일의 중간인 183번째 날 = 7월 2일 - Basket case (Green day) / 3'4" (184,000)
+                    nonair.pause();
+                    onair0702.play();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 184000);
+                } else if (month == 11 && day == 1) {
+                    //10월 31일 - //한 세계의 끝//
+                    document.getElementById('modal1031').style.display = 'block'
+                    nonair.pause();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 60000);
+                } else if (month == 7 && day == 8) {
+                    //7월 7일 - //어떤 세계의 시작//
+                    document.getElementById('modal0707').style.display = 'block'
+                    nonair.pause();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 60000);
+                } else if (month == 1 && day == 1) {
+                    //12월 31일 - //끝나지 않는 세계// - Leave me alone (New Order) / 4'43" (283,000)
+                    document.getElementById('modal1231').style.display = 'block'
+                    nonair.pause();
+                    onair1231.play();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 283000);
+                } else if (month == 2 && day == 16) {
+                    //2월 15일 - reality (Richard Sanderson) / 4'45" (285,000)
+                    nonair.pause();
+                    onair0215.play();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 285000);
+                } else if (day == day - 1) {
+                    //어제 - Yesterday (Beatles) / 2'5" (125,000)
+                    nonair.pause();
+                    onairyesterday.play();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 125000);
+                } else if (month == 10 && day == 1) {
+                    //10월 1일 00시  (9월 30일 12시 방송) - Wake me up when september ends (Green day) / 4'45" (285,000)
+                    nonair.pause();
+                    onair0930.play();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 285000);
+                } else {
+                    //realette show
+                    nonair.pause();
+                    onair.play();
+                    setTimeout(function() {
+                        nonair.play();
+                    }, 60000);
+                }
+
             }
             setTimeout(timecheck, 1000);
         }
