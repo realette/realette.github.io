@@ -52,6 +52,9 @@
     <audio id='onair1231' class="onair">
         <source src='https://realette.github.io/onair1231.mp3'>
     </audio>
+    <audio id='onair0707' class="onair">
+        <source src='https://realette.github.io/onair0707.mp3'>
+    </audio>
 
     <style>
         /* The Modal (background) */
@@ -127,6 +130,7 @@
             var onair0625 = document.getElementById("onair0625")
             var onair0531 = document.getElementById("onair0531")
             var onair1231 = document.getElementById("onair1231")
+            var onair0707 = document.getElementById("onair0707")
 
             today = new Date();
             var month = today.getMonth() + 1;
@@ -187,12 +191,12 @@
                         nonair.play();
                     }, 60000);
                 } else if (month == 7 && day == 8) {
-                    //7월 7일 - //어떤 세계의 시작//
+                    //7월 7일 - //어떤 세계의 시작// - Masterplan (Oasis) / 5' 22" (322,000)
                     document.getElementById('modal0707').style.display = 'block'
                     nonair.pause();
                     setTimeout(function() {
-                        nonair.play();
-                    }, 60000);
+                        onair0707air.play();
+                    }, 322000);
                 } else if (month == 1 && day == 1) {
                     //12월 31일 - //끝나지 않는 세계// - Leave me alone (New Order) / 4'43" (283,000)
                     document.getElementById('modal1231').style.display = 'block'
