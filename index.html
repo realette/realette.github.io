@@ -54,10 +54,8 @@
     <script>
         window.addEventListener('keydown', function(e) {
             console.log(e.keyCode);
-            if (input == '~i' || input == '~I' || input == 'not I' || input == 'not i') {
-                window.open("https://realette.github.io/Iᶜ")
-            } else if (e.ctrlKey && e.keyCode == 77) {
-                var input = prompt();
+            var input = prompt();
+            if (e.ctrlKey && e.keyCode == 77) {
                 window.open("https://realette.github.io/" + input)
             }
 
