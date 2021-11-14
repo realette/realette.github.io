@@ -54,10 +54,13 @@
     <script>
         window.addEventListener('keydown', function(e) {
             console.log(e.keyCode);
-            if (e.ctrlKey && e.keyCode == 77) {
+            if (input == '~i' || input == '~I' || input == 'not I' || input == 'not i') {
+                window.open("https://realette.github.io/Iᶜ")
+            } else if (e.ctrlKey && e.keyCode == 77) {
                 var input = prompt();
                 window.open("https://realette.github.io/" + input)
             }
+
         });
 
         document.getElementById("realbtn").onclick = function() {
