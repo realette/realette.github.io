@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /borderus
+Disallow: /
+
+Sitemap: http://realette.github.io/borderus/sitemap.xml
